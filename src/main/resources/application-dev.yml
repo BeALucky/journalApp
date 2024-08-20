@@ -35,7 +35,7 @@ spring:
             enable: true  #encryption
 
 server:
-  port: {SERVER_PORT}
+  port: ${SERVER_PORT}
   servlet:
     context-path: /journal
 
