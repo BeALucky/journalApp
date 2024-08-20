@@ -7,8 +7,9 @@
 
 spring:
   redis:
-    host: localhost
-    port: 6379
+    host: ${REDIS_HOST}
+    port: 17632
+    password: ${REDIS_PASSWORD}
 
 #    uri: redis://default:xLCBEYBXQ7R1XB5PZmOYTYLNgXNusIWq@redis-17632.c264.ap-south-1-1.ec2.redns.redis-cloud.com:17632
 #    host: redis-17632.c264.ap-south-1-1.ec2.redns.redis-cloud.com
@@ -17,15 +18,15 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb+srv://bealuckydev:Und8gmvN1PPxhTcS@cluster0.zu4xk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      uri: ${MONGODB_URI}
       database: journaldb
       auto-index-creation: true
 
   mail:
     host: smtp.gmail.com    #server which handle email service
     port: 587     # for encrypted data
-    username: bealucky.dev@gmail.com
-    password: dbksbnbqjtlpixrl
+    username: ${JAVA_EMAIL}
+    password: ${JAVA_EMAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -34,10 +35,10 @@ spring:
             enable: true  #encryption
 
 server:
-  port: 8081
+  port: {SERVER_PORT}
   servlet:
     context-path: /journal
 
 weather:
   api:
-    key: 17cb72e3fe119e19eed6f4b9d260e52d
+    key: ${WEATHER_API_KEY}
